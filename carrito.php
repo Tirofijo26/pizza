@@ -1,3 +1,16 @@
+<?php 
+
+$Peperoni = $_POST['Peperoni'];
+$Queso = $_POST['Queso'];
+$Tomate = $_POST['Tomate'];
+$Champiñones = $_POST['Champiñones'];
+$Jamon = $_POST['Jamon'];
+$Especial = $_POST['Especial'];
+
+var_dump($Peperoni . " " . $Queso);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

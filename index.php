@@ -214,43 +214,43 @@ $pizzas = obtenerPizzas();
 
     <!-- Sección de menú comienza aquí -->
 
-    <section class="menu container" id="menu">
-        <h1 class="heading">Nuestro menú</h1>
-        <div class="box-container">
-            <?php
-            while ($fila = $pizzas->fetch_array()) {
-                // Imprimir los datos de cada fila
-                // echo $fila['nombre'] . " - " . $fila['precio'] . "<br>";
-            ?>
-                <div class="box">
-                    <?php
-                    echo "<div class='price'>$<span>{$fila['id']}</span>/-</div>";
-                    echo "<div class='name'>{$fila['nombre']}</div>";
-                    // echo "<img src='{$fila['img']}' alt='{$fila['nombre']}>";
-                    echo "<div class='name'><img src='{$fila['img']}' alt='{$fila['nombre']} width='100px' height='280px'></div>";
-                    echo "<div class='name'>{$fila['precio']}</div>";
-                    ?>
-                    <!-- <img src="" alt=""> -->
-                    <form action="" method="post">
-                        <input type="number" name="qty" min="1" max="20" value="1" class="qty">
-                        <input type="submit" name="add_to_btn" value="Agregar al carrito" class="btn">
-                    </form>
-                </div>
-            <?php
-            }
-            ?>
-        </div>
+    <form action="carrito.php" method="post">
 
+        <section class="menu container" id="menu">
+            <h1 class="heading">Nuestro menú</h1>
+            <div class="box-container">
+                <?php
+                while ($fila = $pizzas->fetch_array()) {
+                    // Imprimir los datos de cada fila
+                    // echo $fila['nombre'] . " - " . $fila['precio'] . "<br>";
+                ?>
+                    <div class="box">
+                        <?php
+                        echo "<div class='price'>$<span>{$fila['precio']}</span>/-</div>";
+                        // echo "<img src='{$fila['img']}' alt='{$fila['nombre']}>";
+                        echo "<div class='name'><img src='{$fila['img']}' alt='{$fila['nombre']} width='100px' height='280px'></div>";
+                        echo "<div class='name'>{$fila['nombre']}</div>";
+                        // echo "<div class='name'>{$fila['precio']}</div>";
+                        ?>
+                        <!-- <img src="" alt=""> -->
+                        <!-- <form action="" method="post"> -->
+                        <input type="number" name="<?php echo $fila['nombre']; ?>" min="0" max="20" value="0" class="qty btn">
+                        <!-- <input type="submit" name="add_to_btn" value="Agregar al carrito" class="btn"> -->
+                        <!-- </form> -->
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
+        </section>
+        <!-- Sección de menú termina aquí -->
 
-    </section>
-    <!-- Sección de menú termina aquí -->
+        <!-- Sección de pedidos comienza aquí -->
+        <section class="order container" id="order">
+            <button type="submit" class="heading btn">Pedir ahora</button>
+        </section>
+    </form>
 
-    <!-- Sección de pedidos comienza aquí -->
-    <section class="order container" id="order">
-        <a href="carrito.php" class="heading btn">
-            Pedir ahora
-        </a>
-    </section>
     <!-- Sección de pedidos termina aquí -->
 
     <!-- Sección de preguntas frecuentes comienza aquí -->
