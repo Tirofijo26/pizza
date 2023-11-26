@@ -787,3 +787,7 @@ body{
         grid-template-columns: 1fr;
     }
 }
+.encabezado{
+    text-align: center;
+    padding-top: 30px;
+}

@@ -15,3 +15,15 @@ function obtenerPizzas()
   // Retorno de los resultados
   return $result;
 }
+
+function registrarFactura($nombre, $direccion, $telefono, $idpizza, $precio)
+{
+  include 'conexion.php';
+
+  $string = implode(", ", $idpizza);
+
+  $sql = "INSERT INTO facturas (nombrecliente, direccion, telefono, idpizza, precio) 
+VALUES ('$nombre', '$direccion', '$telefono', '[$string]', $total)";
+
+$mysqli->query($sql);
+}
