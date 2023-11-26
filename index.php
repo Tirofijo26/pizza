@@ -1,3 +1,10 @@
+<?php
+include './extras/conexion.php';
+include './extras/consultas.php';
+
+$pizzas = obtenerPizzas();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,7 +38,7 @@
                 <div id="user-btn" class="fas fa-user"></div>
                 <div id="order-btn" class="fas fa-box"></div>
 
-                <a href="compras.php">
+                <a href="carrito.php">
                     <div id="cart-btn" class="fas fa-shopping-cart">
                         <span>(1)</span>
                     </div>
