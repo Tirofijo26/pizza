@@ -103,14 +103,3 @@
 </body>
 
 </html>
-<?php
-
-
-if ($conn->query($sql) === TRUE) {
-  echo "Pedido insertado exitosamente";
-} else {
-  echo "Error insertando pedido: " . $conn->error;
-}
-
-$conn->close();
-?>
