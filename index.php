@@ -213,7 +213,7 @@ $pizzas = obtenerPizzas();
     <!-- Sección "Acerca de nosotros" termina aquí -->
 
     <!-- Sección de menú comienza aquí -->
-    //importante//
+
     <section class="menu container" id="menu">
         <h1 class="heading">Nuestro menú</h1>
         <div class="box-container">
@@ -227,7 +227,7 @@ $pizzas = obtenerPizzas();
                     echo "<div class='price'>$<span>{$fila['id']}</span>/-</div>";
                     echo "<div class='name'>{$fila['nombre']}</div>";
                     // echo "<img src='{$fila['img']}' alt='{$fila['nombre']}>";
-                    echo "<div class='name'><img src='{$fila['img']}' alt='{$fila['nombre']}></div>";
+                    echo "<div class='name'><img src='{$fila['img']}' alt='{$fila['nombre']} width='100px' height='280px'></div>";
                     echo "<div class='name'>{$fila['precio']}</div>";
                     ?>
                     <!-- <img src="" alt=""> -->
@@ -247,47 +247,9 @@ $pizzas = obtenerPizzas();
 
     <!-- Sección de pedidos comienza aquí -->
     <section class="order container" id="order">
-        <h1 class="heading">Pedir ahora</h1>
-        <form action="" method="post">
-            <div class="display-orders">
-                <p>Pizza 01 <span>( $3/ - x 2 )</span></p>
-                <p>Pizza 02 <span>( $2/ - x 1 )</span></p>
-                <p>Pizza 03 <span>( $4/ - x 4 )</span></p>
-                <p>Pizza 04 <span>( $2/ - x 1 )</span></p>
-            </div>
-            <div class="flex">
-                <div class="inputBox">
-                    <span>Tu nombre:</span>
-                    <input type="text" name="name" required placeholder="Ingresa tu nombre" maxlength="20" class="box">
-                </div>
-                <div class="inputBox">
-                    <span>Tu número:</span>
-                    <input type="number" name="number" required placeholder="Ingresa tu número" min="0" class="box">
-                </div>
-                <div class="inputBox">
-                    <span>Método de pago:</span>
-                    <select name="method" class="box">
-                        <option value="efectivo a la entrega">Efectivo a la entrega</option>
-                        <option value="tarjeta de crédito">Tarjeta de crédito</option>
-                        <option value="tarjeta Visa">Tarjeta Visa</option>
-                        <option value="PayPal">PayPal</option>
-                    </select>
-                </div>
-                <div class="inputBox">
-                    <span>Tu dirección línea 1:</span>
-                    <input type="text" name="flat" required placeholder="Ejemplo: Número de departamento" maxlength="50" class="box">
-                </div>
-                <div class="inputBox">
-                    <span>Tu dirección línea 2:</span>
-                    <input type="text" name="street" required placeholder="Ejemplo: Nombre de la calle" maxlength="50" class="box">
-                </div>
-                <div class="inputBox">
-                    <span>Tu dirección línea 3:</span>
-                    <input type="text" name="city" required placeholder="Ejemplo: Nombre de la ciudad" maxlength="50" class="box">
-                </div>
-            </div>
-            <input type="submit" value="Pedir ahora" class="btn">
-        </form>
+        <a href="carrito.php" class="heading btn">
+            Pedir ahora
+        </a>
     </section>
     <!-- Sección de pedidos termina aquí -->
 
