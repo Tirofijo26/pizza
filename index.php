@@ -65,16 +65,21 @@ $pizzas = obtenerPizzas();
             <div class="flex">
                 <form action="" method="post">
                     <h3>Iniciar sesión</h3>
-                    <input type="email" name="email" required class="box" placeholder="Ingresa tu correo electrónico" maxlength="50">
-                    <input type="password" name="pass" required class="box" placeholder="Ingresa tu contraseña" maxlength="20">
+                    <input type="email" name="email" required class="box" placeholder="Ingresa tu correo electrónico"
+                        maxlength="50">
+                    <input type="password" name="pass" required class="box" placeholder="Ingresa tu contraseña"
+                        maxlength="20">
                     <input type="submit" value="Iniciar sesión" name="login" class="btn">
                 </form>
                 <form action="" method="post">
                     <h3>Registrarse</h3>
                     <input type="text" name="name" required class="box" placeholder="Ingresa tu nombre" maxlength="20">
-                    <input type="email" name="email" required class="box" placeholder="Ingresa tu correo electrónico" maxlength="50">
-                    <input type="password" name="pass" required class="box" placeholder="Ingresa tu contraseña" maxlength="20">
-                    <input type="password" name="cpass" required class="box" placeholder="Confirma tu contraseña" maxlength="20">
+                    <input type="email" name="email" required class="box" placeholder="Ingresa tu correo electrónico"
+                        maxlength="50">
+                    <input type="password" name="pass" required class="box" placeholder="Ingresa tu contraseña"
+                        maxlength="20">
+                    <input type="password" name="cpass" required class="box" placeholder="Confirma tu contraseña"
+                        maxlength="20">
                     <input type="submit" value="Registrarse" name="register" class="btn">
                 </form>
             </div>
@@ -156,34 +161,40 @@ $pizzas = obtenerPizzas();
     <!-- Sección de inicio comienza aquí -->
     <div class="home-bg">
         <section class="home container" id="home">
+            <style>
+                background-image: url('https://static.vecteezy.com/system/resources/previews/004/268/874/non_2x/pizza-slice-pattern-background-illustration-vector.jpg');
+            </style>
+
             <div class="slide-container">
                 <div class="slide active">
 
                     <div class="content">
-                        <h3>Pizza de Pepperoni Casera</h3>
+                        <h3 class="text-over-image">Pizza de Pepperoni Casera</h3>
                         <div class="fas fa-angle-left" onclick="prev()"></div>
                         <div class="fas fa-angle-right" onclick="next()"></div>
                     </div>
                 </div>
                 <div class="slide">
 
-                    <div class "content">
-                        <h3>Pizza con Champiñones</h3>
+                    <div class="content">
+                        <h3 class="text-over-image">Pizza con Champiñones</h3>
                         <div class="fas fa-angle-left" onclick="prev()"></div>
                         <div class="fas fa-angle-right" onclick="next()"></div>
                     </div>
                 </div>
-                <div class "slide">
+                <div class="slide">
 
                     <!-- <div class="content">
-                        <h3>Mascarpone y Champiñones</h3>
-                        <div class="fas fa-angle-left" onclick="prev()"></div>
-                        <div class="fas fa-angle-right" onclick="next()"></div>
-                    </div> -->
+                    <h3 class="text-over-image">Mascarpone y Champiñones</h3>
+                    <div class="fas fa-angle-left" onclick="prev()"></div>
+                    <div class="fas fa-angle-right" onclick="next()"></div>
+                </div> -->
                 </div>
             </div>
         </section>
     </div>
+
+
     <!-- Sección de inicio termina aquí -->
 
     <!-- Sección "Acerca de nosotros" comienza aquí -->
@@ -223,7 +234,7 @@ $pizzas = obtenerPizzas();
                 while ($fila = $pizzas->fetch_array()) {
                     // Imprimir los datos de cada fila
                     // echo $fila['nombre'] . " - " . $fila['precio'] . "<br>";
-                ?>
+                    ?>
                     <div class="box">
                         <?php
                         echo "<div class='price'>$<span>{$fila['precio']}</span>/-</div>";
@@ -234,11 +245,12 @@ $pizzas = obtenerPizzas();
                         ?>
                         <!-- <img src="" alt=""> -->
                         <!-- <form action="" method="post"> -->
-                        <input type="number" name="<?php echo $fila['nombre']; ?>" min="0" max="20" value="0" class="qty btn">
+                        <input type="number" name="<?php echo $fila['nombre']; ?>" min="0" max="20" value="0"
+                            class="qty btn">
                         <!-- <input type="submit" name="add_to_btn" value="Agregar al carrito" class="btn"> -->
                         <!-- </form> -->
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
             </div>
